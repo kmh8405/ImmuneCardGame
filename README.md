@@ -26,7 +26,7 @@
 
 ## 🔗 관련 링크
 
-- 🔗 Website:  [ImmuneCardGame](#)
+- 🔗 Website:  [ImmuneCardGame](https://kmh8405.github.io/ImmuneCardGame/)
 
 ---
 
