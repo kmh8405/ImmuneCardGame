@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>면역 카드 대전 - 대기실</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="lobby">
+
+  <!-- 룰 모달창 -->
+  <div class="modal show" id="ruleModal">
+    <div class="modal-content">
+      <h2>게임 룰</h2>
+      <p>공격 진영 카드 : </p>
+        <li>암세포(x1), 세균(x4) = 총 5장</li>
+      <p>방어 진영 카드 : </p>
+        <li>T세포(x1), 항체(x4), Helper T세포(x1) = 총 6장</li>
+      <table>
+        <thead>
+          <tr><th>공격</th><th>방어</th><th>결과</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>암세포</td><td>T세포</td><td>방어 승</td></tr>
+          <tr><td>암세포</td><td>항체</td><td>공격 승</td></tr>
+          <tr><td>암세포</td><td>Helper T세포</td><td>무승부 (Helper만 제거)</td></tr>
+          <tr><td>세균</td><td>T세포</td><td>공격 승</td></tr>
+          <tr><td>세균</td><td>항체</td><td>무승부 (둘 다 제거)</td></tr>
+          <tr><td>세균</td><td>Helper T세포</td><td>무승부 (둘 다 제거)</td></tr>
+        </tbody>
+      </table>
+      <button id="closeModal">닫기</button>
+    </div>
+  </div>
+
+  <!-- 카드 종류 -->
+  <section class="card-gallery">
+    <h2>카드 종류</h2>
+    <div class="card-row">
+      <div class="card-flip">
+        <div class="card-inner">
+          <div class="card-front"><img src="image/Tcell.jpg" alt="T세포"></div>
+          <div class="card-back">T세포</div>
+        </div>
+      </div>
+      <div class="card-flip">
+        <div class="card-inner">
+          <div class="card-front"><img src="image/antibody.jpg" alt="항체"></div>
+          <div class="card-back">항체</div>
+        </div>
+      </div>
+      <div class="card-flip">
+        <div class="card-inner">
+          <div class="card-front"><img src="image/HelperTcell.jpg" alt="Helper T세포"></div>
+          <div class="card-back">Helper T세포</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-row second-row">
+      <div class="card-flip">
+        <div class="card-inner">
+          <div class="card-front"><img src="image/cancer.jpg" alt="암세포"></div>
+          <div class="card-back">암세포</div>
+        </div>
+      </div>
+      <div class="card-flip">
+        <div class="card-inner">
+          <div class="card-front"><img src="image/bacteria.jpg" alt="세균"></div>
+          <div class="card-back">세균</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔻 룰 다시 보기 버튼 추가 -->
+    <div class="rule-button-wrapper">
+      <button id="showRulesAgain">게임 룰</button>
+    </div>
+  </section>
+
+
+  <!-- 🔹 매칭/싱글 플레이 버튼 -->
+  <div class="lobby-content">
+    <button id="matchButton">매칭 시작</button>
+    <button id="singlePlayButton" onclick="window.location.href='sologame.html'">싱글 플레이</button>
+  </div>
+
+  <!-- 🔹 개발중 모달창 -->
+  <div class="modal" id="developModal">
+    <div class="modal-content">
+      <h2>⚠ 현재 개발 중입니다.</h2>
+      <p>멀티 플레이 기능은 현재 준비 중입니다.<br>싱글 플레이로 먼저 즐겨보세요!</p>
+      <button id="closeDevelopModal">확인</button>
+    </div>
+  </div>
+
+  <script src="js/index.js"></script>
+
+  <!-- 소켓 클라이언트 라이브러리 (서버에서 자동 제공되는 파일) -->
+  <!-- <script src="/socket.io/socket.io.js"></script> -->
+  <!-- 클라이언트 소켓 코드 -->
+  <!-- <script src="js/socket.js"></script> -->
+
+</body>
+</html>
